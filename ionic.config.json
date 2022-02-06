@@ -1,0 +1,7 @@
+{
+  "name": "MTO",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

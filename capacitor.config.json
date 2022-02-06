@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "MTO",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}
