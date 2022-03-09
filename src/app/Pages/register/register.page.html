@@ -1,0 +1,70 @@
+<style>
+  .label-style{
+    font-size: 15px;
+    font-weight: bold;
+    color: #1C57B9;
+  }
+  .content-padding{
+   padding-left: 20px;
+    padding-right: 20px;
+  }
+  .circulo{
+    clip-path: circle(23.4% at 0 0);
+    background: #1C57B9;
+    height: 50px;
+    z-index: 33;
+  }
+  .button-login{
+    --background: #1C57B9;
+    margin-top: 2rem;
+    height: 40px;
+  }
+</style>
+
+
+
+<ion-content>
+  <div class="circulo">
+    <ion-icon [routerLink]="['/login']" routerLinkActive="router-link-active"  style="font-size: 30px; margin-top: 0.5rem; padding-left: 1rem; color: azure; font-weight: bold;" name="arrow-back-sharp"></ion-icon>
+  </div>
+<form action="">
+ <div class="content-padding" >
+  <ion-item>
+    <ion-label class="label-style" position="floating">Cedula</ion-label>
+    <ion-input></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label class="label-style" position="floating">Nombre</ion-label>
+    <ion-input></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label class="label-style" position="floating">Apellido</ion-label>
+    <ion-input></ion-input>
+  </ion-item>
+</div>
+  <div class="content-padding" >
+    <ion-item>
+      <ion-label class="label-style" position="floating">Telefono</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label class="label-style" position="floating">Direccion</ion-label>
+      <ion-textarea></ion-textarea>
+    </ion-item>
+  </div>
+  <div class="content-padding" >
+    <ion-item>
+      <ion-label class="label-style" position="floating">Correo electronico</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label class="label-style" position="floating">Contraseña</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+    <ion-button shape="round" expand="full" class="button-login">Login</ion-button>
+  </div>
+
+</form>
+
+
+</ion-content>

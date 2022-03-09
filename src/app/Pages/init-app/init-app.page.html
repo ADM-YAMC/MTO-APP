@@ -1,0 +1,138 @@
+
+<style>
+  .content-triangle{
+    width: 100%;
+    height: 200px;
+    position: relative;
+    background: #D8E2F5;
+  }
+  .content-triangle .triangle-1{
+    width: 100%;
+    height: 100%;
+    background: #1C57B9;
+    z-index: 33;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0% 100%);
+    position: absolute;
+  }
+  .content-triangle .triangle-2{
+    width: 100%;
+    height: 100%;
+    background: #BBCDEE;
+    clip-path: polygon(0 0, 100% 0, 100% 82%, 56% 47%);
+    position: absolute;
+  }
+  .content-triangle .triangle-3{
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: #D8E2F5;
+    position: absolute;
+  }
+
+  .content-body{
+  text-align: center;
+  margin: 0%;
+  padding: 20px;
+  background: #D8E2F5;
+  }
+  .button-login{
+    --background: #1C57B9;
+    height: 40px;
+  }
+  ion-content{
+    --background:#D8E2F5;;
+  }
+  </style>
+
+  <ion-content>
+
+
+  <div class="content-triangle" >
+    <div class="triangle-1"></div>
+    <div class="triangle-2"></div>
+    <div class="triangle-3"></div>
+  </div>
+  <div class="content-body">
+  <h1><b>Bienvenidos</b></h1>
+  <h5 style="margin-bottom: 0; padding-bottom: 0;">SMTO</h5>
+  <ion-text color="medium">
+    <p style="margin-top: 0; padding-top: 0; font-size: 15px; font-weight: bold;">Sistema Metro, Teleferico, OMSA</p>
+  </ion-text>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-button [routerLink]="['/login']" routerLinkActive="router-link-active"  shape="round" expand="full" class="button-login">Ingresar</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button [routerLink]="['/register']" routerLinkActive="router-link-active"  shape="round" expand="full" fill="outline" color="medium">Registrarme</ion-button>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid>
+    <ion-text color="medium">
+      <p style="margin-top: 2rem; margin-bottom: 2rem; font-size: 15px; font-weight: bold;">Siguenos!</p>
+    </ion-text>
+    <ion-row style="justify-content: center;" >
+      <ion-col size="3">
+        <ion-avatar>
+          <img src="../../../assets/image/facebook.png">
+        </ion-avatar>
+      </ion-col>
+      <ion-col size="3">
+        <ion-avatar>
+          <img src="../../../assets/image/instagram.png">
+        </ion-avatar>
+      </ion-col>
+      <ion-col size="2">
+        <ion-avatar>
+          <img src="../../../assets/image/gorjeo.png">
+        </ion-avatar>
+      </ion-col>
+    </ion-row>
+    </ion-grid>
+  </div>
+
+
+
+    <!-- <ion-col>
+     <div style="margin: auto; width: 100px; height: 100px; margin-top: 4rem;">
+   <img src="../../../assets/image/train (1).png" height="100" width="100" alt="">
+     </div>
+   </ion-col>
+   <ion-grid>
+     <ion-row>
+       <ion-col>
+        <ion-button expand="full" color="primary"><ion-icon name="logo-facebook"></ion-icon></ion-button>
+       </ion-col>
+       <ion-col>
+        <ion-button expand="full" color="success"><ion-icon name="logo-google"></ion-icon></ion-button>
+       </ion-col>
+     </ion-row>
+   </ion-grid>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+     <ion-item>
+       <ion-label position="floating"><ion-icon name="person-sharp"></ion-icon> Usuario</ion-label>
+       <ion-input></ion-input>
+     </ion-item>
+     <ion-item>
+      <ion-label position="floating"><ion-icon name="key"></ion-icon> Contraseña</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+    <ion-button style="margin-top: 2rem;" expand="full" color="success"><ion-icon name="logo-google"></ion-icon></ion-button>
+    <div style="margin-top: 1rem;">
+      <a href="" style="text-decoration: none; display: block; margin-bottom: 5px;">Olvide mi contraseña</a>
+      <ion-label>
+        No tienes una cuenta <a style="text-decoration: none;" href="">Registrate!</a>
+      </ion-label>
+      <ion-text color="primary">
+        <h1 style="text-align: center; margin-top: 3rem;"><b>SMTO</b></h1>
+      </ion-text>
+    </div>
+  </ion-col>
+    </ion-row>
+  </ion-grid>-->
+
+  </ion-content>

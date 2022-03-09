@@ -1,0 +1,110 @@
+
+<style>
+  .content-wave{
+    width: 100%;
+    height: 225px;
+    position: relative;
+    background: #D8E2F5;
+  }
+  .content-wave .wave-1{
+  z-index: 33;
+    position: absolute;
+  }
+  .content-wave .wave-2{
+    z-index: 32;
+    position: absolute;
+  }
+  .content-wave .wave-3{
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    clip-path: circle(46.1% at 84% 25%);
+    background: #45536B;
+  }
+  .content-wave .wave-4{
+     z-index: 34;
+     width: 100%;
+    height: 100%;
+    position: absolute;
+    background: transparent;
+    text-align: center;
+    padding-top: 2rem;
+  }
+  .wave-4>h1{
+    font-weight: bold;
+    color: azure;
+  }
+
+  .content-body{
+  text-align: center;
+  margin: 0%;
+  padding: 20px;
+  background: #D8E2F5;
+  }
+  .button-login{
+    --background: #1C57B9;
+    margin-top: 2rem;
+    height: 40px;
+  }
+  ion-content,ion-item,ion-footer,ion-toolbar{
+    --background:#D8E2F5;;
+  }
+
+  </style>
+<ion-content>
+   <div class="content-wave" >
+    <svg class="wave-1" viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M-1.46,122.85 C168.40,218.57 267.72,17.26 505.87,64.64 L500.00,0.00 L0.00,0.00 Z" style="stroke: none; fill: #1C57B9;"></path>
+    </svg>
+    <svg class="wave-2"viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M-23.47,105.09 C159.37,225.49 281.26,43.91 587.13,126.80 L500.00,-0.00 L0.00,-0.00 Z" style="stroke: none; fill: #006797;"></path></svg>
+ <div class="wave-3"></div>
+ <div class="wave-4">
+   <h1>Bienvenido</h1>
+ </div>
+
+
+</div>
+<div class="content-body">
+  <ion-item>
+    <ion-label style="font-size: 15px; font-weight: bold; color: #1C57B9;" position="floating"><ion-icon name="person-sharp"></ion-icon> Usuario</ion-label>
+    <ion-input></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label style="font-size: 15px; font-weight: bold; color: #1C57B9;" position="floating"><ion-icon name="key"></ion-icon> Contraseña</ion-label>
+    <ion-input></ion-input>
+  </ion-item>
+  <ion-button shape="round" expand="full" class="button-login">Login</ion-button>
+  <a href="" style="float: right; text-decoration: none; color: #1C57B9; margin-top: 1rem;">Olvide mi contraseña</a>
+  <ion-grid>
+    <ion-text color="medium">
+      <p style="margin-top: 5rem; margin-bottom: 2rem; font-size: 15px; font-weight: bold;">Iniciar con!</p>
+    </ion-text>
+    <ion-row style="justify-content: center;" >
+      <ion-col size="3">
+        <ion-avatar>
+          <img src="../../../assets/image/facebook.png">
+        </ion-avatar>
+      </ion-col>
+      <ion-col size="3">
+        <ion-avatar>
+          <img src="../../../assets/image/instagram.png">
+        </ion-avatar>
+      </ion-col>
+      <ion-col size="2">
+        <ion-avatar>
+          <img src="../../../assets/image/gorjeo.png">
+        </ion-avatar>
+      </ion-col>
+    </ion-row>
+    </ion-grid>
+
+  </div>
+<ion-footer class="ion-no-border">
+    <ion-toolbar>
+        <ion-text color="medium">
+          <p style=" font-size: 15px; font-weight: bold; text-align: center;"> No tienes una cuenta <a style="text-decoration: none; color: #1C57B9;" href="register">Registrate!</a></p>
+        </ion-text>
+    </ion-toolbar>
+  </ion-footer>
+</ion-content>
+

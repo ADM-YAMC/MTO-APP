@@ -1,0 +1,56 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start" class="color-blue">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-grid style="height: 45px !important;">
+      <ion-row>
+        <ion-col size="7" style="height: 40px;">
+          <ion-title style="padding-left:0 ; margin-left: 0;">principla</ion-title>
+        </ion-col>
+        <ion-col class="color-blue">
+          <ion-col>
+            <ion-icon class="trash" name="trash" (click)="check=!check"></ion-icon>
+          </ion-col>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" >
+ <div class="content" *ngIf="check===true; else dele">
+  <ion-item (click)="presentModal()">
+    <ion-avatar slot="start">
+      <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+    </ion-avatar>
+    <ion-label>Item Avatar</ion-label>
+  </ion-item>
+ </div>
+ <ng-template #dele>
+   <ion-item>
+    <ion-avatar slot="start">
+      <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+    </ion-avatar>
+    <ion-label>Item Avatar</ion-label>
+    <ion-checkbox slot="end" [(ngModel)]="checked" (ionChange)="onChange(select=!select)" color="danger"></ion-checkbox>
+  </ion-item>
+
+  <div class="row mt-4 p-4">
+    <div class="col">
+      <ion-button  class="w-100" style="--background: #1C57B9 !important;">Cancelar</ion-button>
+    </div>
+    <div class="col">
+      <ion-button class="w-100" [disabled]="!select" color="danger">Eliminar</ion-button>
+    </div>
+  </div>
+</ng-template>
+
+</ion-content>
+ <!-- fab placed to the top end -->
+ <ion-fab  vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button (click)="presentModalAddCard()" style="--background: #1C57B9 !important;">
+    <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+

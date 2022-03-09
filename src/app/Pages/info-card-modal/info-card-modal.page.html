@@ -1,0 +1,117 @@
+<ion-header class="color-ion-toolbar" [translucent]="true">
+  <ion-toolbar class="color-ion-toolbar">
+    <ion-grid style="height: 45px !important;">
+      <ion-row>
+        <ion-col class="color-blue" size="8" style="height: 40px;">
+          <ion-icon class="arrow-back" (click)="dismiss()" name="arrow-back"></ion-icon>
+        </ion-col>
+        <ion-col class="color-blue">
+          <ion-col>
+            <ion-icon class="help" name="help"></ion-icon>
+          </ion-col>
+          <ion-col>
+            <ion-icon class="ellipsis-vertical" name="ellipsis-vertical"></ion-icon>
+          </ion-col>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col class="content-info-card">
+       <div class="image-center">
+          <img height="80" width="80" src="../../../assets/image/numero-de-pin.png">
+       </div>
+       <div class="info-card">
+        <ion-label>08765434567</ion-label>
+        <ion-label>Item Avatar</ion-label>
+        <ion-label>Activa</ion-label>
+       </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-item-divider class="color-ion-divider" style="position: sticky; top: 0;">
+    <ion-label>
+      INFORMACION GENERAL
+    </ion-label>
+  </ion-item-divider>
+  <div class="info-general">
+    <ion-item >
+        <img height="40" width="40" src="../../../assets/image/bolsa-de-dinero.png">
+      <ion-grid style=" padding-right: 0; margin-right: 0;">
+        <ion-row>
+          <ion-col>
+            <ion-label>
+              <p>Balance</p>
+              <h3 style="font-size: 20px;">RD$58.00</h3>
+            </ion-label>
+          </ion-col>
+          <ion-col style="margin-left: 20px; padding-right: 0;">
+            <ion-button expand="block" (click)="presentModal(0)" style="height: 38px;">Recargar</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  </div>
+  <ion-item-divider class="color-ion-divider" style="position: sticky; top: 0;">
+    <ion-label>
+      CONSUMO
+    </ion-label>
+  </ion-item-divider>
+
+    <ion-item >
+
+        <img height="40" width="40" src="../../../assets/image/viajero.png">
+
+      <ion-grid style=" padding-right: 0; margin-right: 0;">
+        <ion-row>
+          <ion-col>
+            <ion-label>
+              <p>Viajes</p>
+              <h3 style="font-size: 20px;">6</h3>
+            </ion-label>
+          </ion-col>
+          <ion-col style="margin-left: 20px; padding-right: 0;">
+            <ion-button expand="block" (click)="presentModal(1)" style="height: 38px;">Comprar</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+    <ion-item >
+
+        <img style="margin-right: 10px;" height="38" width="38" src="../../../assets/image/promedio.png">
+
+      <ion-label >
+        <p>Promedio de viajes consumidos</p>
+        <h3 style="font-size: 20px;">14</h3>
+      </ion-label>
+    </ion-item>
+
+    <ion-item-divider class="color-ion-divider" style="position: sticky; top: 0;">
+      <ion-label>
+        ULTIMOS MOVIMIENTOS
+      </ion-label>
+    </ion-item-divider>
+
+    <ion-item>
+
+      <ion-label>
+        <p>05/2/2022 12:22</p>
+        <h3 style="font-size: 17px;">CASANDRA DAMIRON</h3>
+      </ion-label>
+      <img width="34" height="34" src="../../../assets/image/logout.png">
+    </ion-item>
+    <ion-item >
+
+        <img style="margin-right: 10px;" width="36" height="36" src="../../../assets/image/exit.png">
+
+      <ion-label>
+        <p>05/2/2022 01:22</p>
+        <h3 style="font-size: 17px;">AMIN ABEL</h3>
+      </ion-label>
+    </ion-item>
+</ion-content>

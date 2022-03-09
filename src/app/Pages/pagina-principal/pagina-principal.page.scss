@@ -1,0 +1,23 @@
+.trash{
+  font-size: 30px;
+  float: right;
+  margin-left: 10px;
+}
+.add{
+  font-size: 30px;
+  float: right;
+}
+.color-blue{
+  color: #1C57B9;
+}
+.arrow-back{
+  font-size: 30px;
+  margin-left: 10px;
+}
+.footer-md::before {
+  display: none !important;
+}
+:host {
+  --background: var(--ion-color-primary, #1C57B9) !important;
+}
+

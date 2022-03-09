@@ -1,0 +1,24 @@
+<ion-header class="color-ion-toolbar" [translucent]="true">
+  <ion-toolbar class="color-ion-toolbar">
+    <ion-grid style="height: 45px !important;">
+      <ion-row>
+        <ion-col class="color-blue" size="2" style="height: 40px;">
+          <ion-icon class="arrow-back" (click)="dismiss()" name="arrow-back"> </ion-icon>
+        </ion-col>
+        <span style="font-weight: 600; color: #1C57B9;" class="mt-2">Agregar nueva tarjeta</span>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<div class="container">
+  <ion-item class="mt-2">
+    <ion-label style="font-size: 15px; font-weight: bold; color: #1C57B9;" position="floating">+ Numero de tarjeta</ion-label>
+    <ion-input></ion-input>
+  </ion-item>
+</div>
+ <div class="con p-2">
+  <ion-button expand="block"  class="mt-3" style="background: #1C57B9; height: 40px;">Agregar tarjeta</ion-button>
+ </div>
+</ion-content>
