@@ -4,18 +4,18 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { AddCardModalPageRoutingModule } from './add-card-modal-routing.module';
+import { AddCardPageRoutingModule } from './add-card-routing.module';
 
-import { AddCardModalPage } from './add-card-modal.page';
+import { AddCardPage } from './add-card.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    AddCardModalPageRoutingModule,
+    AddCardPageRoutingModule,
     ReactiveFormsModule
   ],
-  declarations: [AddCardModalPage]
+  declarations: [AddCardPage]
 })
-export class AddCardModalPageModule {}
+export class AddCardPageModule {}

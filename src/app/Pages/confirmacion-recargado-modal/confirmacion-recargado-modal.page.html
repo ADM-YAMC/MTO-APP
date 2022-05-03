@@ -20,7 +20,7 @@
    <div class="info-card">
     <ion-label>¡Operacion realizada con exito!</ion-label>
     <ion-label>Confirmacion numero</ion-label>
-    <h4 class="text-success">9877839</h4>
+    <h4 class="text-success">{{codigo}}</h4>
    </div>
   </div>
  </ion-card>
@@ -34,26 +34,28 @@
       <img style="margin-right: 10px;" height="38" width="38" src="../../../assets/image/credit-card.png">
     <ion-label >
       <p>Metodo de pago</p>
-      <h3 style="font-size: 17px;">XXXX-XXXX-XXXX-8972</h3>
+      <h3 style="font-size: 17px;">XXXX-XXXX-XXXX-{{recarga.tarjeta.substr(-4)}}</h3>
     </ion-label>
   </ion-item>
     <div class="form-group">
       <ion-label >
         <p>Recarga a:</p>
-        <h3 style="font-size: 17px;">98765445678</h3>
+        <h3 style="font-size: 17px;">{{tarjeta.numeroTarjeta}}</h3>
       </ion-label>
     </div>
   <div class="row mt-2">
     <div class="col">
       <ion-label >
         <p>{{montoCantidad}}</p>
-        <h3 style="font-size: 17px;">RD$80.00</h3>
+        <h3 *ngIf="tipo===0" style="font-size: 17px;">RD${{recarga.monto}}.00</h3>
+        <h3 *ngIf="tipo===1" style="font-size: 17px;">{{recarga.cantidad}}</h3>
       </ion-label>
     </div>
     <div class="col">
       <ion-label >
         <p>Monto pagado</p>
-        <h3 style="font-size: 17px;">RD$80.00</h3>
+        <h3 *ngIf="tipo===0" style="font-size: 17px;">RD${{recarga.monto}}.00</h3>
+        <h3 *ngIf="tipo===1" style="font-size: 17px;">{{recarga.cantidad*20}}</h3>
       </ion-label>
     </div>
   </div>

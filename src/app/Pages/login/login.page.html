@@ -61,21 +61,41 @@
  <div class="wave-4">
    <h1>Bienvenido</h1>
  </div>
-
-
 </div>
 <div class="content-body">
+
+<form [formGroup]="loginForm" (ngSubmit)="submitForm()" novalidate>
   <ion-item>
-    <ion-label style="font-size: 15px; font-weight: bold; color: #1C57B9;" position="floating"><ion-icon name="person-sharp"></ion-icon> Usuario</ion-label>
-    <ion-input></ion-input>
+    <ion-label style="font-size: 15px; font-weight: bold; color: #1C57B9;" position="floating">
+      <ion-icon name="person-sharp"></ion-icon> Usuario
+    </ion-label>
+    <ion-input formControlName="user" type="email"></ion-input>
   </ion-item>
+  <small class="error text-danger text-left mt-0" *ngIf="isSubmitted && errorControl.user.errors?.required">
+    El correo o nombre de usuario es obligatorio...
+  </small>
+  <small class="error text-danger text-left mt-0" *ngIf="isSubmitted && errorControl.user.errors?.pattern">
+    El correo no es valido...
+  </small>
   <ion-item>
-    <ion-label style="font-size: 15px; font-weight: bold; color: #1C57B9;" position="floating"><ion-icon name="key"></ion-icon> Contraseña</ion-label>
-    <ion-input></ion-input>
+    <ion-label style="font-size: 15px; font-weight: bold; color: #1C57B9;" position="floating">
+      <ion-icon name="key"></ion-icon> Contraseña
+    </ion-label>
+    <ion-input formControlName="pass" type="password"></ion-input>
   </ion-item>
-  <ion-button shape="round" expand="full" class="button-login">Login</ion-button>
+ <small class="error text-danger text-left mt-0" *ngIf="isSubmitted && errorControl.pass.errors?.required">
+   La contraseña es obligatoria...
+  </small>
+  <small class="error text-danger text-left mt-0" *ngIf="isSubmitted && errorControl.pass.errors?.minlength">
+   La contraseña debe contener mas de 8 caracteres...
+  </small>
+  <ion-button type="submit" shape="round" expand="full" class="button-login">Login</ion-button>
+</form>
+
+
+
   <a href="" style="float: right; text-decoration: none; color: #1C57B9; margin-top: 1rem;">Olvide mi contraseña</a>
-  <ion-grid>
+  <!-- <ion-grid>
     <ion-text color="medium">
       <p style="margin-top: 5rem; margin-bottom: 2rem; font-size: 15px; font-weight: bold;">Iniciar con!</p>
     </ion-text>
@@ -96,13 +116,13 @@
         </ion-avatar>
       </ion-col>
     </ion-row>
-    </ion-grid>
+    </ion-grid> -->
 
   </div>
 <ion-footer class="ion-no-border">
     <ion-toolbar>
         <ion-text color="medium">
-          <p style=" font-size: 15px; font-weight: bold; text-align: center;"> No tienes una cuenta <a style="text-decoration: none; color: #1C57B9;" href="register">Registrate!</a></p>
+          <p style=" font-size: 15px; font-weight: bold; text-align: right; padding-right: 15px;"> No tienes una cuenta <a style="text-decoration: none; color: #1C57B9;" href="register">Registrate!</a></p>
         </ion-text>
     </ion-toolbar>
   </ion-footer>

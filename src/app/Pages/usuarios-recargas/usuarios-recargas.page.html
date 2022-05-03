@@ -13,18 +13,27 @@
 
 <ion-content>
 <div class="container">
-  <ion-item class="mt-2" *ngIf="tipo===0">
+  <form [formGroup]="recargaCardForm" (ngSubmit)="submitForm()">
+     <ion-item class="mt-2" *ngIf="tipo===0">
     <ion-label style="font-size: 15px; font-weight: bold; color: #1C57B9;" position="floating">$ Monto</ion-label>
-    <ion-input type="number"></ion-input>
+    <ion-input formControlName="monto" type="number"></ion-input>
   </ion-item>
+  <small class="error text-danger text-left mt-0" *ngIf="isSubmitted && errorControl.monto.errors?.required">
+    El monto es obligatorio...
+   </small>
+   <!-- <small class="error text-danger text-left mt-0" *ngIf="isSubmitted && errorControl.card.errors?.minlength">
+    La tarjeta es demaciada corta...
+   </small> -->
   <ion-item class="mt-2" *ngIf="tipo===1">
     <ion-label style="font-size: 15px; font-weight: bold; color: #1C57B9;" position="floating">Cantidad</ion-label>
-    <ion-input type="number"></ion-input>
+    <ion-input formControlName="cantidad" type="number"></ion-input>
   </ion-item>
+  <small class="error text-danger text-left mt-0" *ngIf="isSubmitted && errorControl.cantidad.errors?.required">
+    La cantidad de viajes es obligatoria...
+   </small>
   <ion-card-subtitle *ngIf="tipo===0" class="text-danger mt-2">Monto minimo RD$20.00 y maximo de RD2500.00</ion-card-subtitle>
   <ion-card-subtitle *ngIf="tipo===1" class="text-danger mt-2">Viajes minimos 1 y un maximo de 20</ion-card-subtitle>
-</div>
-<ion-card>
+<ion-card class="p-0 m-0">
   <ion-card-header>
     <ion-card-subtitle>Metodo de pago</ion-card-subtitle>
     <ion-card-title>Informacion de la tarjeta</ion-card-title>
@@ -32,20 +41,36 @@
 
   <ion-card-content>
     <div class="form-group">
-      <input type="text" placeholder="Numero de la tarjeta" class="form-control">
+      <input id="ccn" type="tel" class="form-control" inputmode="numeric" pattern="[0-9\s]{13,16}"
+       autocomplete="cc-number" formControlName="tarjeta" maxlength="16" placeholder="xxxx xxxx xxxx xxxx">
     </div>
+    <small class="error text-danger text-left mt-0" *ngIf="isSubmitted && errorControl.tarjeta.errors?.required">
+      Debes de introducir el numero de la tarjeta...
+     </small>
   <div class="row mt-2">
     <div class="col">
-      <input type="text" placeholder="Fecha" class="form-control">
+      <input id="ccn" type="tel" class="form-control" inputmode="numeric"
+      autocomplete="cc-number" (ionChange)="inputDate($event)" formControlName="fecha" maxlength="4" placeholder="mm/yy">
+
     </div>
+    <small class="error text-danger text-left mt-0" *ngIf="isSubmitted && errorControl.fecha.errors?.required">
+      La fecha de vencimiento es obligatoria...
+     </small>
     <div class="col">
-      <input type="text" placeholder="CVV" class="form-control">
+      <input id="ccn" type="tel" class="form-control" inputmode="numeric"
+      autocomplete="cc-number" formControlName="cvv" maxlength="3" placeholder="CVV">
     </div>
+    <small class="error text-danger text-left mt-0" *ngIf="isSubmitted && errorControl.cvv.errors?.required">
+      Introduce el codigo de seguridad...
+     </small>
   </div>
   <ion-card-subtitle class="text-danger mt-2">No guardaremos la informacion de tu tarjeta.</ion-card-subtitle>
   </ion-card-content>
 </ion-card>
- <div class="con p-2">
-  <ion-button expand="block"  class="mt-3" (click)="presentModal(tipo)" style="background: #1C57B9; height: 40px;">Continuar</ion-button>
+ <div class="con">
+  <ion-button expand="block"  class="mt-3" type="submit" style="background: #1C57B9; height: 40px;">Continuar</ion-button>
  </div>
+  </form>
+</div>
+
 </ion-content>

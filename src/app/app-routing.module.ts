@@ -1,10 +1,11 @@
+/* eslint-disable max-len */
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'pagina-principal',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
   {
@@ -42,6 +43,10 @@ const routes: Routes = [
   {
     path: 'add-card-modal',
     loadChildren: () => import('./Pages/add-card-modal/add-card-modal.module').then( m => m.AddCardModalPageModule)
+  },
+  {
+    path: 'add-card',
+    loadChildren: () => import('./Pages/add-card/add-card.module').then( m => m.AddCardPageModule)
   }
 ];
 

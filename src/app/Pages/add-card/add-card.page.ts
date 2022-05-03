@@ -1,4 +1,4 @@
-/* eslint-disable no-trailing-spaces */
+  /* eslint-disable no-trailing-spaces */
 /* eslint-disable no-var */
 /* eslint-disable @typescript-eslint/quotes */
 /* eslint-disable eqeqeq */
@@ -9,12 +9,15 @@ import { AlertController, LoadingController, ModalController } from '@ionic/angu
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { PaginaPrincipalPage } from '../pagina-principal/pagina-principal.page';
+import { Router } from '@angular/router';
+
 @Component({
-  selector: 'app-add-card-modal',
-  templateUrl: './add-card-modal.page.html',
-  styleUrls: ['./add-card-modal.page.scss'],
+  selector: 'app-add-card',
+  templateUrl: './add-card.page.html',
+  styleUrls: ['./add-card.page.scss'],
 })
-export class AddCardModalPage implements OnInit {
+export class AddCardPage implements OnInit {
+
   addCardForm: FormGroup;
   isSubmitted = false;
   card: any;
@@ -26,7 +29,8 @@ export class AddCardModalPage implements OnInit {
     private http: HttpClient,
     public alertController: AlertController,
     public loadingController: LoadingController,
-    private reloadCardUser: PaginaPrincipalPage) { }
+    private reloadCardUser: PaginaPrincipalPage,
+    private router: Router) { }
 
   ngOnInit() {
     this.usuario = JSON.parse(sessionStorage.getItem('usuario'));
@@ -62,7 +66,7 @@ export class AddCardModalPage implements OnInit {
       this.cardTemp.tarjeta.map(x => x.idUsuarioTitular=this.usuario.idUsuario);
      }
      var card = this.cardTemp.tarjeta[0];
-     this.http.put("https://localhost:44391/api/Tarjetas/"+this.cardTemp.tarjeta[0].idTarjeta+"",card).subscribe(data =>{
+     this.http.put("https://smto-apiv2.azurewebsites.net/api/Tarjetas/"+this.cardTemp.tarjeta[0].idTarjeta+"",card).subscribe(data =>{
        this.cardTemp = data;
        if (this.cardTemp.ok) {
          this.presentAlertUpdateCard(this.cardTemp.mensaje);
@@ -80,8 +84,7 @@ export class AddCardModalPage implements OnInit {
           text: 'Ok',
           id: 'confirm-button',
           handler: () => {
-            this.reloadCardUser.loadCardUser(this.usuario.idUsuario);
-
+            window.location.reload();
           }
         }
       ]
@@ -97,4 +100,11 @@ export class AddCardModalPage implements OnInit {
     });
   }
 
+  reloadComponent() {
+    this.router.navigateByUrl('pagina-principal');
+
 }
+}
+
+
+

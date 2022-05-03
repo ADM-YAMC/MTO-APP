@@ -1,3 +1,4 @@
+
 <ion-header class="color-ion-toolbar" [translucent]="true">
   <ion-toolbar class="color-ion-toolbar">
     <ion-grid style="height: 45px !important;">
@@ -17,7 +18,7 @@
     <img style="margin-right: 10px;" height="38" width="38" src="../../../assets/image/credit-card.png">
   <ion-label >
     <p>Metodo de pago</p>
-    <h3 style="font-size: 17px;">XXXX-XXXX-XXXX-8972</h3>
+    <h3 style="font-size: 17px;">XXXX-XXXX-XXXX-{{t.substr(-4)}}</h3>
   </ion-label>
 </ion-item>
 </div>
@@ -30,20 +31,22 @@
     <div class="form-group">
       <ion-label >
         <p>Recarga a:</p>
-        <h3 style="font-size: 17px;">98765445678</h3>
+        <h3 style="font-size: 17px;">{{tarjeta.numeroTarjeta}}</h3>
       </ion-label>
     </div>
   <div class="row mt-2">
     <div class="col">
       <ion-label >
         <p>{{montoCantidad}}</p>
-        <h3 style="font-size: 17px;">RD$80.00</h3>
+        <h3 *ngIf="tipo===0" style="font-size: 17px;">RD${{recarga.monto}}.00</h3>
+        <h3 *ngIf="tipo===1" style="font-size: 17px;">{{recarga.cantidad}}</h3>
       </ion-label>
     </div>
     <div class="col">
       <ion-label >
         <p>Monto a pagar</p>
-        <h3 style="font-size: 17px;">RD$80.00</h3>
+        <h3 *ngIf="tipo===0" style="font-size: 17px;">RD${{recarga.monto}}.00</h3>
+        <h3 *ngIf="tipo===1" style="font-size: 17px;">{{recarga.cantidad*20}}</h3>
       </ion-label>
     </div>
   </div>
@@ -51,6 +54,6 @@
   </ion-card-content>
 </ion-card>
  <div class="con p-2">
-  <ion-button expand="block"  class="mt-3" (click)="presentModal(tipo)" style="background: #1C57B9; height: 40px;">Confirmar</ion-button>
+  <ion-button expand="block"  class="mt-3" (click)="guardarRecarga()" style="background: #1C57B9; height: 40px;">Confirmar</ion-button>
  </div>
 </ion-content>

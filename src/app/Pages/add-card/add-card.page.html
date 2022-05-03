@@ -3,7 +3,7 @@
     <ion-grid style="height: 45px !important;">
       <ion-row>
         <ion-col class="color-blue" size="2" style="height: 40px;">
-          <ion-icon class="arrow-back" (click)="dismiss()" name="arrow-back"> </ion-icon>
+          <ion-icon class="arrow-back" [routerLink]="['/pagina-principal']"  name="arrow-back"> </ion-icon>
         </ion-col>
         <span style="font-weight: 600; color: #1C57B9;" class="mt-2">Agregar nueva tarjeta</span>
       </ion-row>

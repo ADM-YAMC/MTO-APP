@@ -6,7 +6,7 @@
     <ion-grid style="height: 45px !important;">
       <ion-row>
         <ion-col size="7" style="height: 40px;">
-          <ion-title style="padding-left:0 ; margin-left: 0;">principla</ion-title>
+          <ion-title style="padding-left:0 ; margin-left: 0;">Mis tarjetas</ion-title>
         </ion-col>
         <ion-col class="color-blue">
           <ion-col>
@@ -20,25 +20,31 @@
 
 <ion-content [fullscreen]="true" >
  <div class="content" *ngIf="check===true; else dele">
-  <ion-item (click)="presentModal()">
+  <ion-item (click)="presentModal(item)" *ngFor="let item of tarjetas">
     <ion-avatar slot="start">
-      <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+      <img src="https://cdn-icons-png.flaticon.com/512/4289/4289322.png">
     </ion-avatar>
-    <ion-label>Item Avatar</ion-label>
+    <ion-label>
+      <h3>{{item.numeroTarjeta}}</h3>
+      <p [ngClass]="!item.estado ? 'text-danger':'text-success'">{{!item.estado ? "Inactiva":"Activa"}}</p>
+    </ion-label>
   </ion-item>
  </div>
- <ng-template #dele>
-   <ion-item>
+ <ng-template  #dele>
+   <ion-item *ngFor="let item of tarjetas">
     <ion-avatar slot="start">
       <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
     </ion-avatar>
-    <ion-label>Item Avatar</ion-label>
+    <ion-label>
+      <h3>{{item.numeroTarjeta}}</h3>
+      <p>Activa</p>
+    </ion-label>
     <ion-checkbox slot="end" [(ngModel)]="checked" (ionChange)="onChange(select=!select)" color="danger"></ion-checkbox>
   </ion-item>
 
   <div class="row mt-4 p-4">
     <div class="col">
-      <ion-button  class="w-100" style="--background: #1C57B9 !important;">Cancelar</ion-button>
+      <ion-button  class="w-100" (click)="check=!check" style="--background: #1C57B9 !important;">Cancelar</ion-button>
     </div>
     <div class="col">
       <ion-button class="w-100" [disabled]="!select" color="danger">Eliminar</ion-button>
@@ -49,7 +55,7 @@
 </ion-content>
  <!-- fab placed to the top end -->
  <ion-fab  vertical="bottom" horizontal="end" slot="fixed">
-  <ion-fab-button (click)="presentModalAddCard()" style="--background: #1C57B9 !important;">
+  <ion-fab-button [routerLink]="['/add-card']"  style="--background: #1C57B9 !important;">
     <ion-icon name="add"></ion-icon>
   </ion-fab-button>
 </ion-fab>

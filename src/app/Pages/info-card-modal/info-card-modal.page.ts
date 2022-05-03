@@ -1,7 +1,7 @@
 /* eslint-disable object-shorthand */
 /* eslint-disable quote-props */
 import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ModalController, NavParams } from '@ionic/angular';
 import { UsuariosRecargasPage } from '../usuarios-recargas/usuarios-recargas.page';
 
 @Component({
@@ -10,10 +10,12 @@ import { UsuariosRecargasPage } from '../usuarios-recargas/usuarios-recargas.pag
   styleUrls: ['./info-card-modal.page.scss'],
 })
 export class InfoCardModalPage implements OnInit {
-
-  constructor(public modalController: ModalController) { }
+  cards: any;
+  constructor(public modalController: ModalController,public navParams: NavParams) { }
 
   ngOnInit() {
+    this.cards = this.navParams.get('cards');
+    console.log(this.cards);
   }
 
   dismiss() {
@@ -26,6 +28,7 @@ export class InfoCardModalPage implements OnInit {
       component: UsuariosRecargasPage,
       componentProps: {
         'tipo': tipo,
+        'card':this.cards
       }
     });
     return await modal.present();
